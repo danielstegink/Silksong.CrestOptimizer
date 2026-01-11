@@ -1,0 +1,48 @@
+{
+	"FOCUS_1_NAME": "Lv 2 - Focus Hits",
+	"FOCUS_1_DESC": "Hits required for Focus at Lv 2",
+	"FOCUS_D1_NAME": "Lv 2 - Focus Modifier",
+	"FOCUS_D1_DESC": "Focus damage modifier at Lv 2",
+	"FOCUS_2_NAME": "Lv 3 - Focus Hits",
+	"FOCUS_2_DESC": "Hits required for Focus at Lv 3",
+	"FOCUS_D2_NAME": "Lv 3 - Focus Modifier",
+	"FOCUS_D2_DESC": "Focus damage modifier at Lv 3",
+	"FOCUS_2S_NAME": "Lv 3 - Focus Hits (Enhanced)",
+	"FOCUS_2S_DESC": "Hits required for Enhanced Focus at Lv 3",
+	"FOCUS_D2S_NAME": "Lv 3 - Focus Modifier (Enhanced)",
+	"FOCUS_D2S_DESC": "Enhanced Focus damage modifier at Lv 3",
+
+	"SILK_COUNT_NAME": "Silk Count",
+	"SILK_COUNT_DESC": "Increases number of Silk fragments produced",
+	"SILK_VALUE_NAME": "Silk Value",
+	"SILK_VALUE_DESC": "Increases value of Silk fragments (default: 3 fragments = 1 silk)",
+
+	"CRIT_CHANCE_NAME": "Critical Hit Chance",
+	"CRIT_CHANCE_DESC": "Percent chance of a critical hit",
+	"CRIT_NAME": "Critical Hit Damage Bonus",
+	"CRIT_DESC": "Multiplier for damage of a critical hit",
+	"WANDERER_SLOT_NAME": "Extra Red Slot",
+	"WANDERER_SLOT_DESC": "Turns the Wanderer Crest's bottom yellow slot into a red slot",
+
+	"POGO_INV_NAME": "Down Slash I-Frames",
+	"POGO_INV_DESC": "Become invulnerable while down-slashing with the Beast Crest",
+	"FURY_CAP_NAME": "Fury Heal Cap",
+	"FURY_CAP_DESC": "Maximum masks healed by binding with the Beast Crest",
+
+	"BIND_SIZE_NAME": "Tentacle Size",
+	"BIND_SIZE_DESC": "Modifier for the size of the Witch Crest's tentacle bind",
+	"LN_BIND_SIZE_NAME": "Tentacle Size (Longclaw)",
+	"LN_BIND_SIZE_DESC": "Modifier for the size of the Witch Crest's tentacle bind with Longclaw equipped",
+	"WITCH_CAP_NAME": "Witch Heal Cap",
+	"WITCH_CAP_DESC": "Maximum masks healed by binding with the Witch Crest",
+	"WITCH_REFUND_NAME": "Witch Silk Refund",
+	"WITCH_REFUND_DESC": "Refunds some Silk if the Witch Crest's bind misses",
+
+	"SHARD_NAME": "Extra Shard Drop",
+	"SHARD_DESC": "Percent chance of enemies dropping Shell Shards on hit with Architect Crest",
+	"CRAFT_MASK_NAME": "Craft Masks",
+	"CRAFT_MASK_DESC": "Number of masks healed by Craft Bind",
+
+	"NO_DROP_NAME": "No Drop Bind",
+	"NO_DROP_DESC": "Skips the 'drop' portion of Shaman Crest's Bind"
+}

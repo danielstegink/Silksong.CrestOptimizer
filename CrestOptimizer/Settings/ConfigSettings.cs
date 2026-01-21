@@ -1,5 +1,6 @@
 ﻿using BepInEx.Configuration;
 using TeamCherry.Localization;
+using UnityEngine;
 
 namespace CrestOptimizer.Settings
 {
@@ -77,6 +78,26 @@ namespace CrestOptimizer.Settings
         /// Maximum Masks that can be healed while in Beast Crest's fury mode
         /// </summary>
         public static ConfigEntry<int> furyCap;
+
+        /// <summary>
+        /// Removes drop from down slash
+        /// </summary>
+        public static ConfigEntry<bool> beastDash;
+
+        /// <summary>
+        /// Removes dash from down slash
+        /// </summary>
+        public static ConfigEntry<bool> beastPogo;
+
+        /// <summary>
+        /// Adjusts the size of the up slash
+        /// </summary>
+        public static ConfigEntry<Vector3> biggerUpSlash;
+
+        ///// <summary>
+        ///// Replaces down slash
+        ///// </summary>
+        //public static ConfigEntry<bool> newDownSlash;
         #endregion
 
         #region Witch
@@ -99,6 +120,11 @@ namespace CrestOptimizer.Settings
         /// Whether or not to refund Silk on failed bind
         /// </summary>
         public static ConfigEntry<bool> refundSilk;
+
+        /// <summary>
+        /// If Multibinder is equipped, Claw Mirror(s) will trigger twice
+        /// </summary>
+        public static ConfigEntry<bool> doubleMirror;
         #endregion
 
         #region Architect
@@ -111,6 +137,11 @@ namespace CrestOptimizer.Settings
         /// Number of Masks healed by Craft Bind
         /// </summary>
         public static ConfigEntry<int> craftMaskCount;
+
+        /// <summary>
+        /// Craft Bind is the default bind
+        /// </summary>
+        public static ConfigEntry<bool> craftBindDefault;
         #endregion
 
         #region Shaman
@@ -275,7 +306,7 @@ namespace CrestOptimizer.Settings
                 replaceTool = config.Bind("Wanderer", "1", defaultValueBool, "2");
             }
             #endregion
-
+            
             #region Beast
             name = new LocalisedString($"Mods.{CrestOptimizer.Id}", "POGO_INV_NAME");
             description = new LocalisedString($"Mods.{CrestOptimizer.Id}", "POGO_INV_DESC");
@@ -302,6 +333,58 @@ namespace CrestOptimizer.Settings
             {
                 furyCap = config.Bind("Beast", "Fury Heal Cap", defaultValueInt, "Maximum Masks that can be healed using Beast Crest's Fury mode");
             }
+
+            name = new LocalisedString($"Mods.{CrestOptimizer.Id}", "BEAST_DASH_NAME");
+            description = new LocalisedString($"Mods.{CrestOptimizer.Id}", "BEAST_DASH_DESC");
+            defaultValueBool = false;
+            if (name.Exists &&
+                description.Exists)
+            {
+                beastDash = config.Bind("Beast", name, defaultValueBool, description);
+            }
+            else
+            {
+                beastDash = config.Bind("Beast", "Beast Dash", defaultValueBool, "Converts down slash into a dash attack");
+            }
+
+            name = new LocalisedString($"Mods.{CrestOptimizer.Id}", "BEAST_POGO_NAME");
+            description = new LocalisedString($"Mods.{CrestOptimizer.Id}", "BEAST_POGO_DESC");
+            defaultValueBool = false;
+            if (name.Exists &&
+                description.Exists)
+            {
+                beastPogo = config.Bind("Beast", name, defaultValueBool, description);
+            }
+            else
+            {
+                beastPogo = config.Bind("Beast", "Beast Pogo", defaultValueBool, "Converts down slash into a vertical drop attack");
+            }
+
+            name = new LocalisedString($"Mods.{CrestOptimizer.Id}", "BEAST_UP_NAME");
+            description = new LocalisedString($"Mods.{CrestOptimizer.Id}", "BEAST_UP_DESC");
+            Vector3 defaultValueVector3 = Vector3.one;
+            if (name.Exists &&
+                description.Exists)
+            {
+                biggerUpSlash = config.Bind("Beast", name, defaultValueVector3, description);
+            }
+            else
+            {
+                biggerUpSlash = config.Bind("Beast", "Bigger Up Slash", defaultValueVector3, "Adjusts the size of the upward slash");
+            }
+
+            //name = new LocalisedString($"Mods.{CrestOptimizer.Id}", "BEAST_DOWN_NAME");
+            //description = new LocalisedString($"Mods.{CrestOptimizer.Id}", "BEAST_DOWN_DESC");
+            //defaultValueBool = false;
+            //if (name.Exists &&
+            //    description.Exists)
+            //{
+            //    newDownSlash = config.Bind("Beast", name, defaultValueBool, description);
+            //}
+            //else
+            //{
+            //    newDownSlash = config.Bind("Beast", "New Down Slash", defaultValueBool, "Replaces down slash");
+            //}
             #endregion
 
             #region Witch
@@ -328,7 +411,7 @@ namespace CrestOptimizer.Settings
             }
             else
             {
-                longclawBindSizeMultiplier = config.Bind("Witch", "Witch Bind Multiplier (Longclaw)", defaultValueFloat, "How much to enlarge Witch Crest's tentacle bind with longclaw equipped");
+                longclawBindSizeMultiplier = config.Bind("Witch", "1", defaultValueFloat, "2");
             }
 
             name = new LocalisedString($"Mods.{CrestOptimizer.Id}", "WITCH_CAP_NAME");
@@ -341,7 +424,7 @@ namespace CrestOptimizer.Settings
             }
             else
             {
-                witchCap = config.Bind("Witch", "Witch Heal Cap", defaultValueInt, "Maximum Masks that can be healed using Witch Crest");
+                witchCap = config.Bind("Witch", "1", defaultValueInt, "2");
             }
 
             name = new LocalisedString($"Mods.{CrestOptimizer.Id}", "WITCH_REFUND_NAME");
@@ -354,7 +437,20 @@ namespace CrestOptimizer.Settings
             }
             else
             {
-                refundSilk = config.Bind("Witch", "With Silk Refund", defaultValueBool, "Refund some Silk on a failed bind");
+                refundSilk = config.Bind("Witch", "1", defaultValueBool, "2");
+            }
+
+            name = new LocalisedString($"Mods.{CrestOptimizer.Id}", "DOUBLE_MIRROR_NAME");
+            description = new LocalisedString($"Mods.{CrestOptimizer.Id}", "DOUBLE_MIRROR_DESC");
+            defaultValueBool = false;
+            if (name.Exists &&
+                description.Exists)
+            {
+                doubleMirror = config.Bind("Witch", name, defaultValueBool, description);
+            }
+            else
+            {
+                doubleMirror = config.Bind("Witch", "1", defaultValueBool, "2");
             }
             #endregion
 
@@ -383,6 +479,19 @@ namespace CrestOptimizer.Settings
             else
             {
                 craftMaskCount = config.Bind("Architect", "1", defaultValueInt, "2");
+            }
+
+            name = new LocalisedString($"Mods.{CrestOptimizer.Id}", "CRAFT_DEFAULT_NAME");
+            description = new LocalisedString($"Mods.{CrestOptimizer.Id}", "CRAFT_DEFAULT_DESC");
+            defaultValueBool = false;
+            if (name.Exists &&
+                description.Exists)
+            {
+                craftBindDefault = config.Bind("Architect", name, defaultValueBool, description);
+            }
+            else
+            {
+                craftBindDefault = config.Bind("Architect", "1", defaultValueBool, "2");
             }
             #endregion
 

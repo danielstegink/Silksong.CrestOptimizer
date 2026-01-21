@@ -54,6 +54,18 @@ Applies invincibility to the start of the down slash
 #### Fury Heal Cap
 The maximum number of masks that can be healed with a
 single bind
+#### Beast Dash
+Removes drop from down slash, turning it into a dash 
+attack
+#### Beast Pogo
+Removes forward movement from down slash, turning it
+into a vertical dive attack
+#### Up Slash Size
+Increases the range of the up slash
+- NOTE: I am aware that in the code I multiply the
+x & y scales by the opposite config scales. This is on
+purpose so the x-multiplier affects the horizontal 
+scale, and vice versa.
 
 ### Witch Crest
 #### Tentacle Size
@@ -67,6 +79,9 @@ single bind
 #### Witch Silk Refund
 Refunds some Silk if the bind doesn't hit any targets,
 and therefore doesn't restore any masks
+#### Double Mirrors
+When Multibinder is equipped, Claw Mirror(s) triggers
+twice
 
 ### Architect Crest
 #### Extra Shard Drop
@@ -74,6 +89,9 @@ Percent chance of enemies dropping Shell Shards on a
 successful attack
 #### Craft Masks
 The number of masks restored by Craft Bind
+#### Craft Bind Default
+Swaps the activation requirements for Bind and Craft
+Bind, making Craft Bind the default
 
 ### Shaman Crest
 #### No Drop Bind

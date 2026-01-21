@@ -2,6 +2,7 @@
 using HarmonyLib;
 using UnityEngine;
 using CrestOptimizer.Settings;
+using DanielSteginkUtils.Utilities;
 
 namespace CrestOptimizer.Helpers
 {
@@ -23,6 +24,28 @@ namespace CrestOptimizer.Helpers
             }
 
             BuffTentacles();
+
+            if (Gameplay.WarriorCrest.IsEquipped &&
+                __instance.crestAttacksFSM.FsmVariables.GetFsmBool("In Crest Attack").Value)
+            {
+                Rigidbody2D rb2d = __instance.rb2d;
+                float x = rb2d.linearVelocity.x;
+                float y = rb2d.linearVelocity.y;
+
+                if (ConfigSettings.beastDash.Value)
+                {
+                    y = 0;
+                }
+
+                if (ConfigSettings.beastPogo.Value)
+                {
+                    x = 0;
+                }
+
+                rb2d.SetVelocity(x, y);
+                ClassIntegrations.SetField(__instance, "rb2d", rb2d);
+                //CrestOptimizer.Instance.Log($"Velocity: {__instance.rb2d.linearVelocity}");
+            }
         }
 
         /// <summary>

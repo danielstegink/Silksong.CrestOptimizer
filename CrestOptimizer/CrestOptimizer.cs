@@ -5,6 +5,7 @@ using HarmonyLib;
 namespace CrestOptimizer;
 
 [BepInAutoPlugin(id: "io.github.danielstegink.crestoptimizer")]
+[BepInDependency("org.silksong-modding.i18n")]
 public partial class CrestOptimizer : BaseUnityPlugin
 {
     internal static CrestOptimizer Instance { get; private set; }

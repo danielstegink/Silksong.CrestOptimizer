@@ -1,4 +1,7 @@
 # Changelog
+## 1.1.0
+- Added explicit I18N dependency
+
 ## 1.0.0
 - New features: Beast Dash, Beast Pogo, Up Slash Size,
 Double Mirrors, Craft Bind Default

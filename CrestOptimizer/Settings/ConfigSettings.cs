@@ -169,7 +169,7 @@ namespace CrestOptimizer.Settings
             }
             else
             {
-                focusHits = config.Bind("Hunter", "1", defaultValueInt, "1");
+                focusHits = config.Bind("Hunter", "FOCUS_1_NAME", defaultValueInt, "FOCUS_1_DESC");
             }
 
             name = new LocalisedString($"Mods.{CrestOptimizer.Id}", "FOCUS_D1_NAME");
@@ -182,7 +182,7 @@ namespace CrestOptimizer.Settings
             }
             else
             {
-                focusDamage = config.Bind("Hunter", "1", defaultValueFloat, "2s");
+                focusDamage = config.Bind("Hunter", "FOCUS_D1_NAME", defaultValueFloat, "FOCUS_D1_DESC");
             }
 
             name = new LocalisedString($"Mods.{CrestOptimizer.Id}", "FOCUS_2_NAME");
@@ -195,7 +195,7 @@ namespace CrestOptimizer.Settings
             }
             else
             {
-                focusHits2 = config.Bind("Hunter", "1", defaultValueInt, "2");
+                focusHits2 = config.Bind("Hunter", "FOCUS_2_NAME", defaultValueInt, "FOCUS_2_DESC");
             }
 
             name = new LocalisedString($"Mods.{CrestOptimizer.Id}", "FOCUS_D2_NAME");
@@ -208,7 +208,7 @@ namespace CrestOptimizer.Settings
             }
             else
             {
-                focusDamage2 = config.Bind("Hunter", "1", defaultValueFloat, "2");
+                focusDamage2 = config.Bind("Hunter", "FOCUS_D2_NAME", defaultValueFloat, "FOCUS_D2_DESC");
             }
 
             name = new LocalisedString($"Mods.{CrestOptimizer.Id}", "FOCUS_2S_NAME");
@@ -221,7 +221,7 @@ namespace CrestOptimizer.Settings
             }
             else
             {
-                focusHits2S = config.Bind("Hunter", "1", defaultValueInt, "2");
+                focusHits2S = config.Bind("Hunter", "FOCUS_2S_NAME", defaultValueInt, "FOCUS_2S_DESC");
             }
 
             name = new LocalisedString($"Mods.{CrestOptimizer.Id}", "FOCUS_D2S_NAME");
@@ -234,7 +234,7 @@ namespace CrestOptimizer.Settings
             }
             else
             {
-                focusDamage2S = config.Bind("Hunter", "1", defaultValueFloat, "2");
+                focusDamage2S = config.Bind("Hunter", "FOCUS_D2S_NAME", defaultValueFloat, "FOCUS_D2S_DESC");
             }
             #endregion
 
@@ -249,7 +249,7 @@ namespace CrestOptimizer.Settings
             }
             else
             {
-                silkCountMultiplier = config.Bind("Reaper", "1", defaultValueInt, "2");
+                silkCountMultiplier = config.Bind("Reaper", "SILK_COUNT_NAME", defaultValueInt, "SILK_COUNT_DESC");
             }
 
             name = new LocalisedString($"Mods.{CrestOptimizer.Id}", "SILK_VALUE_NAME");
@@ -262,7 +262,7 @@ namespace CrestOptimizer.Settings
             }
             else
             {
-                silkValueMultiplier = config.Bind("Reaper", "1", defaultValueInt, "2");
+                silkValueMultiplier = config.Bind("Reaper", "SILK_VALUE_NAME", defaultValueInt, "SILK_VALUE_DESC");
             }
             #endregion
 
@@ -277,7 +277,7 @@ namespace CrestOptimizer.Settings
             }
             else
             {
-                critChance = config.Bind("Wanderer", "1", defaultValueFloat, "2");
+                critChance = config.Bind("Wanderer", "CRIT_CHANCE_NAME", defaultValueFloat, "CRIT_CHANCE_DESC");
             }
 
             name = new LocalisedString($"Mods.{CrestOptimizer.Id}", "CRIT_NAME");
@@ -290,7 +290,7 @@ namespace CrestOptimizer.Settings
             }
             else
             {
-                critDamage = config.Bind("Wanderer", "1", defaultValueFloat, "2");
+                critDamage = config.Bind("Wanderer", "CRIT_NAME", defaultValueFloat, "CRIT_DESC");
             }
 
             name = new LocalisedString($"Mods.{CrestOptimizer.Id}", "WANDERER_SLOT_NAME");
@@ -303,7 +303,7 @@ namespace CrestOptimizer.Settings
             }
             else
             {
-                replaceTool = config.Bind("Wanderer", "1", defaultValueBool, "2");
+                replaceTool = config.Bind("Wanderer", "WANDERER_SLOT_NAME", defaultValueBool, "WANDERER_SLOT_DESC");
             }
             #endregion
             
@@ -318,7 +318,7 @@ namespace CrestOptimizer.Settings
             }
             else
             {
-                downSlashIFrames = config.Bind("Beast", "Down Slash I-Frames", defaultValueBool, "Applies invulnerability at the start of down-slashing with the Beast Crest");
+                downSlashIFrames = config.Bind("Beast", "POGO_INV_NAME", defaultValueBool, "POGO_INV_DESC");
             }
 
             name = new LocalisedString($"Mods.{CrestOptimizer.Id}", "FURY_CAP_NAME");
@@ -331,7 +331,7 @@ namespace CrestOptimizer.Settings
             }
             else
             {
-                furyCap = config.Bind("Beast", "Fury Heal Cap", defaultValueInt, "Maximum Masks that can be healed using Beast Crest's Fury mode");
+                furyCap = config.Bind("Beast", "FURY_CAP_NAME", defaultValueInt, "FURY_CAP_DESC");
             }
 
             name = new LocalisedString($"Mods.{CrestOptimizer.Id}", "BEAST_DASH_NAME");
@@ -344,7 +344,7 @@ namespace CrestOptimizer.Settings
             }
             else
             {
-                beastDash = config.Bind("Beast", "Beast Dash", defaultValueBool, "Converts down slash into a dash attack");
+                beastDash = config.Bind("Beast", "BEAST_DASH_NAME", defaultValueBool, "BEAST_DASH_DESC");
             }
 
             name = new LocalisedString($"Mods.{CrestOptimizer.Id}", "BEAST_POGO_NAME");
@@ -357,7 +357,7 @@ namespace CrestOptimizer.Settings
             }
             else
             {
-                beastPogo = config.Bind("Beast", "Beast Pogo", defaultValueBool, "Converts down slash into a vertical drop attack");
+                beastPogo = config.Bind("Beast", "BEAST_POGO_NAME", defaultValueBool, "BEAST_POGO_DESC");
             }
 
             name = new LocalisedString($"Mods.{CrestOptimizer.Id}", "BEAST_UP_NAME");
@@ -370,7 +370,7 @@ namespace CrestOptimizer.Settings
             }
             else
             {
-                biggerUpSlash = config.Bind("Beast", "Bigger Up Slash", defaultValueVector3, "Adjusts the size of the upward slash");
+                biggerUpSlash = config.Bind("Beast", "BEAST_UP_NAME", defaultValueVector3, "BEAST_UP_DESC");
             }
 
             //name = new LocalisedString($"Mods.{CrestOptimizer.Id}", "BEAST_DOWN_NAME");
@@ -398,7 +398,7 @@ namespace CrestOptimizer.Settings
             }
             else
             {
-                bindSizeMultiplier = config.Bind("Witch", "1", defaultValueFloat, "2");
+                bindSizeMultiplier = config.Bind("Witch", "BIND_SIZE_NAME", defaultValueFloat, "BIND_SIZE_DESC");
             }
 
             name = new LocalisedString($"Mods.{CrestOptimizer.Id}", "LN_BIND_SIZE_NAME");
@@ -411,7 +411,7 @@ namespace CrestOptimizer.Settings
             }
             else
             {
-                longclawBindSizeMultiplier = config.Bind("Witch", "1", defaultValueFloat, "2");
+                longclawBindSizeMultiplier = config.Bind("Witch", "LN_BIND_SIZE_NAME", defaultValueFloat, "LN_BIND_SIZE_DESC");
             }
 
             name = new LocalisedString($"Mods.{CrestOptimizer.Id}", "WITCH_CAP_NAME");
@@ -424,7 +424,7 @@ namespace CrestOptimizer.Settings
             }
             else
             {
-                witchCap = config.Bind("Witch", "1", defaultValueInt, "2");
+                witchCap = config.Bind("Witch", "WITCH_CAP_NAME", defaultValueInt, "WITCH_CAP_DESC");
             }
 
             name = new LocalisedString($"Mods.{CrestOptimizer.Id}", "WITCH_REFUND_NAME");
@@ -437,7 +437,7 @@ namespace CrestOptimizer.Settings
             }
             else
             {
-                refundSilk = config.Bind("Witch", "1", defaultValueBool, "2");
+                refundSilk = config.Bind("Witch", "WITCH_REFUND_NAME", defaultValueBool, "WITCH_REFUND_DESC");
             }
 
             name = new LocalisedString($"Mods.{CrestOptimizer.Id}", "DOUBLE_MIRROR_NAME");
@@ -450,7 +450,7 @@ namespace CrestOptimizer.Settings
             }
             else
             {
-                doubleMirror = config.Bind("Witch", "1", defaultValueBool, "2");
+                doubleMirror = config.Bind("Witch", "DOUBLE_MIRROR_NAME", defaultValueBool, "DOUBLE_MIRROR_DESC");
             }
             #endregion
 
@@ -465,7 +465,7 @@ namespace CrestOptimizer.Settings
             }
             else
             {
-                scavengerChance = config.Bind("Architect", "1", defaultValueInt, "2");
+                scavengerChance = config.Bind("Architect", "SHARD_NAME", defaultValueInt, "SHARD_DESC");
             }
 
             name = new LocalisedString($"Mods.{CrestOptimizer.Id}", "CRAFT_MASK_NAME");
@@ -478,7 +478,7 @@ namespace CrestOptimizer.Settings
             }
             else
             {
-                craftMaskCount = config.Bind("Architect", "1", defaultValueInt, "2");
+                craftMaskCount = config.Bind("Architect", "CRAFT_MASK_NAME", defaultValueInt, "CRAFT_MASK_DESC");
             }
 
             name = new LocalisedString($"Mods.{CrestOptimizer.Id}", "CRAFT_DEFAULT_NAME");
@@ -491,7 +491,7 @@ namespace CrestOptimizer.Settings
             }
             else
             {
-                craftBindDefault = config.Bind("Architect", "1", defaultValueBool, "2");
+                craftBindDefault = config.Bind("Architect", "CRAFT_DEFAULT_NAME", defaultValueBool, "CRAFT_DEFAULT_DESC");
             }
             #endregion
 
@@ -506,7 +506,7 @@ namespace CrestOptimizer.Settings
             }
             else
             {
-                noDropBind = config.Bind("Shaman", "1", defaultValueBool, "2");
+                noDropBind = config.Bind("Shaman", "NO_DROP_NAME", defaultValueBool, "NO_DROP_DESC");
             }
             #endregion
         }

@@ -1,4 +1,11 @@
 # Changelog
+## 2.0.0
+- New features:
+	- Fury of the Cursed for Cursed Crest
+	- Spell Needle for Shaman Crest
+	- Damage Bonus, Attack Speed Bonus, Movement Speed Bonus
+and Passive Healing for Cloakless Crest
+
 ## 1.1.0
 - Added explicit I18N dependency
 

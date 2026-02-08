@@ -8,6 +8,26 @@ namespace CrestOptimizer.Helpers
     [HarmonyPatch(typeof(HealthManager), "TakeDamage")]
     public static class HealthManager_TakeDamage
     {
+        [HarmonyPrefix]
+        public static void Prefix(HealthManager __instance, ref HitInstance hitInstance)
+        {
+            int defaultDamage = hitInstance.DamageDealt;
+            if (Gameplay.CursedCrest.IsEquipped &&
+                (PlayerData.instance.health + PlayerData.instance.healthBlue) <= 2)
+            {
+                float multiplier = ConfigSettings.fotfMultiplier.Value - 1;
+                int bonusDamage = (int)(multiplier * defaultDamage);
+                hitInstance.DamageDealt += bonusDamage;
+            }
+
+            if (Gameplay.CloaklessCrest.IsEquipped)
+            {
+                float multiplier = ConfigSettings.punchBonus.Value - 1;
+                int bonusDamage = (int)(multiplier * defaultDamage);
+                hitInstance.DamageDealt += bonusDamage;
+            }
+        }
+
         [HarmonyPostfix]
         public static void Postfix(HealthManager __instance, ref HitInstance hitInstance)
         {

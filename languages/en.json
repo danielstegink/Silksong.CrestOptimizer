@@ -37,6 +37,10 @@
 
 	"BIND_SIZE_NAME": "Tentacle Size",
 	"BIND_SIZE_DESC": "Modifier for the size of the tentacle bind",
+
+	"CURSED_FURY_NAME": "Fury of the Cursed",
+	"CURSED_FURY_DESC": "Damage multiplier when at 2 health or less",
+
 	"LN_BIND_SIZE_NAME": "Tentacle Size (Longclaw)",
 	"LN_BIND_SIZE_DESC": "Modifier for the size of the tentacle bind with Longclaw equipped",
 	"WITCH_CAP_NAME": "Heal Cap",
@@ -54,5 +58,16 @@
 	"CRAFT_DEFAULT_DESC": "Swaps controls for Bind and Craft Bind",
 
 	"NO_DROP_NAME": "No Drop Bind",
-	"NO_DROP_DESC": "Skips the 'drop' portion of the bind"
+	"NO_DROP_DESC": "Skips the 'drop' portion of the bind",
+	"SPELL_NEEDLE_NAME": "Spell Needle",
+	"SPELL_NEEDLE_DESC": "Converts needle attacks into Silk Skills",
+
+	"PUNCH_NAME": "Damage Bonus",
+	"PUNCH_DESC": "Multiplier for damage",
+	"UNARMED_ATTACK_NAME": "Attack Speed Bonus",
+	"UNARMED_ATTACK_DESC": "Multiplier for attack speed",
+	"UNARMED_MOVE_NAME": "Movement Speed Bonus",
+	"UNARMED_MOVE_DESC": "Multiplier for movement speed",
+	"UNARMED_HEAL_NAME": "Passive Healing",
+	"UNARMED_HEAL_DESC": "Time (in seconds) required to regenerate 1 Mask"
 }

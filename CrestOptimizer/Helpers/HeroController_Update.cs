@@ -3,12 +3,18 @@ using HarmonyLib;
 using UnityEngine;
 using CrestOptimizer.Settings;
 using DanielSteginkUtils.Utilities;
+using System.Diagnostics;
 
 namespace CrestOptimizer.Helpers
 {
     [HarmonyPatch(typeof(HeroController), "Update")]
     public static class HeroController_Update
     {
+        /// <summary>
+        /// Timer for tracking passive healing with Cloakless Crest
+        /// </summary>
+        internal static Stopwatch cloaklessHealTimer = new Stopwatch();
+
         [HarmonyPostfix]
         public static void Postfix(HeroController __instance)
         {
@@ -45,6 +51,28 @@ namespace CrestOptimizer.Helpers
                 rb2d.SetVelocity(x, y);
                 ClassIntegrations.SetField(__instance, "rb2d", rb2d);
                 //CrestOptimizer.Instance.Log($"Velocity: {__instance.rb2d.linearVelocity}");
+            }
+
+            if (GameManager.instance.isPaused)
+            {
+                cloaklessHealTimer.Stop();
+            }
+            else
+            {
+                if (Gameplay.CloaklessCrest.IsEquipped &&
+                    ConfigSettings.healTime.Value > 0)
+                {
+                    cloaklessHealTimer.Start();
+                    if (cloaklessHealTimer.ElapsedMilliseconds >= ConfigSettings.healTime.Value * 1000)
+                    {
+                        __instance.AddHealth(1);
+                        cloaklessHealTimer.Restart();
+                    }
+                }
+                else
+                {
+                    cloaklessHealTimer.Stop();
+                }
             }
         }
 

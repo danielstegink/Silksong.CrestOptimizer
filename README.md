@@ -67,6 +67,10 @@ x & y scales by the opposite config scales. This is on
 purpose so the x-multiplier affects the horizontal 
 scale, and vice versa.
 
+### Cursed Crest
+#### Fury of the Cursed
+The damage modifier applied when at 2 Health or less
+
 ### Witch Crest
 #### Tentacle Size
 Increases the range of the bind tentacles
@@ -97,6 +101,20 @@ Bind, making Craft Bind the default
 #### No Drop Bind
 Disables the "drop" step of the bind, allowing for
 mid-air binds
+#### Spell Needle
+Converts needle attacks into Silk Skills, causing them to
+give no more Silk, but synergize with Shaman Crest and 
+Volt Filament
+
+### Cloakless Crest
+#### Damage Bonus
+Damage modifier
+#### Attack Speed Bonus
+Attack speed modifier
+#### Movement Speed Bonus
+Movement speed modifier
+#### Passive Healing
+Regenerates 1 Mask every few seconds
 
 ## Special Thanks
 MsGreen419 for the original mod idea

@@ -100,6 +100,23 @@ namespace CrestOptimizer.Settings
         //public static ConfigEntry<bool> newDownSlash;
         #endregion
 
+        #region Cursed
+        ///// <summary>
+        ///// Enables custom Suicide Bind
+        ///// </summary>
+        //public static ConfigEntry<bool> cursedBind;
+
+        ///// <summary>
+        ///// Multiplier for getting max masks
+        ///// </summary>
+        //public static ConfigEntry<float> extraMasksMultiplier;
+
+        /// <summary>
+        /// Damage multiplier when at low health
+        /// </summary>
+        public static ConfigEntry<float> fotfMultiplier;
+        #endregion
+
         #region Witch
         /// <summary>
         /// How much to increase of size of the Witch Crest's tentacle bind
@@ -149,6 +166,33 @@ namespace CrestOptimizer.Settings
         /// Whether or not Shaman Crest bind should "drop" the player
         /// </summary>
         public static ConfigEntry<bool> noDropBind;
+
+        /// <summary>
+        /// Turns Needle attacks into spell attacks
+        /// </summary>
+        public static ConfigEntry<bool> spellNail;
+        #endregion
+
+        #region Cloakless
+        /// <summary>
+        /// Damage multiplier for unarmed attacks
+        /// </summary>
+        public static ConfigEntry<float> punchBonus;
+
+        /// <summary>
+        /// Attack speed bonus
+        /// </summary>
+        public static ConfigEntry<float> punchSpeedBonus;
+
+        /// <summary>
+        /// Movement speed bonus
+        /// </summary>
+        public static ConfigEntry<float> speedBonus;
+
+        /// <summary>
+        /// Time (in seconds) to wait before healing 1 Mask
+        /// </summary>
+        public static ConfigEntry<float> healTime;
         #endregion
 #pragma warning restore CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring as nullable.
 
@@ -387,6 +431,34 @@ namespace CrestOptimizer.Settings
             //}
             #endregion
 
+            #region Cursed
+            //name = new LocalisedString($"Mods.{CrestOptimizer.Id}", "CURSED_MASKS_NAME");
+            //description = new LocalisedString($"Mods.{CrestOptimizer.Id}", "CURSED_MASKS_DESC");
+            //defaultValueFloat = 1f;
+            //if (name.Exists &&
+            //    description.Exists)
+            //{
+            //    extraMasksMultiplier = config.Bind("Cursed", name, defaultValueFloat, description);
+            //}
+            //else
+            //{
+            //    extraMasksMultiplier = config.Bind("Cursed", "CURSED_MASKS_NAME", defaultValueFloat, "CURSED_MASKS_DESC");
+            //}
+
+            name = new LocalisedString($"Mods.{CrestOptimizer.Id}", "CURSED_FURY_NAME");
+            description = new LocalisedString($"Mods.{CrestOptimizer.Id}", "CURSED_FURY_DESC");
+            defaultValueFloat = 1f;
+            if (name.Exists &&
+                description.Exists)
+            {
+                fotfMultiplier = config.Bind("Cursed", name, defaultValueFloat, description);
+            }
+            else
+            {
+                fotfMultiplier = config.Bind("Cursed", "CURSED_FURY_NAME", defaultValueFloat, "CURSED_FURY_DESC");
+            }
+            #endregion
+
             #region Witch
             name = new LocalisedString($"Mods.{CrestOptimizer.Id}", "BIND_SIZE_NAME");
             description = new LocalisedString($"Mods.{CrestOptimizer.Id}", "BIND_SIZE_DESC");
@@ -507,6 +579,73 @@ namespace CrestOptimizer.Settings
             else
             {
                 noDropBind = config.Bind("Shaman", "NO_DROP_NAME", defaultValueBool, "NO_DROP_DESC");
+            }
+
+            name = new LocalisedString($"Mods.{CrestOptimizer.Id}", "SPELL_NEEDLE_NAME");
+            description = new LocalisedString($"Mods.{CrestOptimizer.Id}", "SPELL_NEEDLE_DESC");
+            defaultValueBool = false;
+            if (name.Exists &&
+                description.Exists)
+            {
+                spellNail = config.Bind("Shaman", name, defaultValueBool, description);
+            }
+            else
+            {
+                spellNail = config.Bind("Shaman", "SPELL_NEEDLE_NAME", defaultValueBool, "SPELL_NEEDLE_DESC");
+            }
+            #endregion
+
+            #region Cloakless
+            name = new LocalisedString($"Mods.{CrestOptimizer.Id}", "PUNCH_NAME");
+            description = new LocalisedString($"Mods.{CrestOptimizer.Id}", "PUNCH_DESC");
+            defaultValueFloat = 1f;
+            if (name.Exists &&
+                description.Exists)
+            {
+                punchBonus = config.Bind("Cloakless", name, defaultValueFloat, description);
+            }
+            else
+            {
+                punchBonus = config.Bind("Cloakless", "PUNCH_NAME", defaultValueFloat, "PUNCH_DESC");
+            }
+
+            name = new LocalisedString($"Mods.{CrestOptimizer.Id}", "UNARMED_ATTACK_NAME");
+            description = new LocalisedString($"Mods.{CrestOptimizer.Id}", "UNARMED_ATTACK_DESC");
+            defaultValueFloat = 1f;
+            if (name.Exists &&
+                description.Exists)
+            {
+                punchSpeedBonus = config.Bind("Cloakless", name, defaultValueFloat, description);
+            }
+            else
+            {
+                punchSpeedBonus = config.Bind("Cloakless", "UNARMED_ATTACK_NAME", defaultValueFloat, "UNARMED_ATTACK_DESC");
+            }
+
+            name = new LocalisedString($"Mods.{CrestOptimizer.Id}", "UNARMED_MOVE_NAME");
+            description = new LocalisedString($"Mods.{CrestOptimizer.Id}", "UNARMED_MOVE_DESC");
+            defaultValueFloat = 1f;
+            if (name.Exists &&
+                description.Exists)
+            {
+                speedBonus = config.Bind("Cloakless", name, defaultValueFloat, description);
+            }
+            else
+            {
+                speedBonus = config.Bind("Cloakless", "UNARMED_MOVE_NAME", defaultValueFloat, "UNARMED_MOVE_DESC");
+            }
+
+            name = new LocalisedString($"Mods.{CrestOptimizer.Id}", "UNARMED_HEAL_NAME");
+            description = new LocalisedString($"Mods.{CrestOptimizer.Id}", "UNARMED_HEAL_DESC");
+            defaultValueFloat = -1f;
+            if (name.Exists &&
+                description.Exists)
+            {
+                healTime = config.Bind("Cloakless", name, defaultValueFloat, description);
+            }
+            else
+            {
+                healTime = config.Bind("Cloakless", "UNARMED_HEAL_NAME", defaultValueFloat, "UNARMED_HEAL_DESC");
             }
             #endregion
         }

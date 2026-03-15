@@ -1,4 +1,7 @@
 # Changelog
+## 2.1.0
+- Bug fix so No Drop Bind doesn't break ground bind
+
 ## 2.0.0
 - New features:
 	- Fury of the Cursed for Cursed Crest

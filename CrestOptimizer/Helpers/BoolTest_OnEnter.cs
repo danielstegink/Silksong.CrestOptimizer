@@ -58,7 +58,8 @@ namespace CrestOptimizer.Helpers
         /// <returns></returns>
         private static bool IsShamanDropCheck(BoolTest __instance)
         {
-            return __instance.State.Name.Equals("Bind Air") &&
+            return (__instance.State.Name.Equals("Bind Air") ||
+                        __instance.State.Name.Equals("Shaman Silk?")) &&
                     __instance.Fsm.Name.Equals("Bind") &&
                     __instance.boolVariable.Name.Equals("Is Shaman Equipped");
         }
